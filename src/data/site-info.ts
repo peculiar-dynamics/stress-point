@@ -124,58 +124,44 @@ const siteInfo: SiteInfo = {
     {
       key: "Home",
       href: "/",
-      title: "Home to Women's Health Innovators",
-      description:
-        "Redefining the future of women's health through innovation, collaboration, and purpose.",
+      title: "Home title",
+      description: "Home description",
       nav: true,
     },
     {
       key: "About",
       href: "/about/",
-      title: "Home to Women's Health Innovators",
-      description:
-        "Meet Femtech Sphere - Our ecosystem supports women's health startups by connecting them with industry experts, investors, and strategic partners.",
+      title: "About title",
+      description: "About description",
       nav: true,
     },
     {
-      key: "Approach",
-      href: "/approach/",
-      title: "Our approach to redefining the future of Women's health",
-      description:
-        "Femtech Sphere provides comprehensive guidance to bring impactful technologies to market, that ultimately support closing the gender gap in healthcare.",
+      key: "Solutions",
+      href: "/solutions/",
+      title: "solutions title",
+      description: "solutions description",
+      children: [
+        {
+          key: "Overview",
+          href: "/solutions/",
+        },
+        {
+          key: "SPHERE App",
+          href: "/solutions/sphere-app/",
+        },
+        // {
+        //   key: "Service 2",
+        //   href: "/solutions/service2/",
+        // },
+      ],
       nav: true,
     },
-    // {
-    //   key: "Startups",
-    //   href: "/startups/",
-    // },
-    // {
-    //   key: "Ecosystem",
-    //   href: "/ecosystem/",
-    // },
-
-    // {
-    //   key: "Services",
-    //   href: "/services/",
-    //   children: [
-    //     {
-    //       key: "Overview",
-    //       href: "/services/",
-    //     },
-    //     {
-    //       key: "Service 1",
-    //       href: "/services/service1/",
-    //     },
-    //     {
-    //       key: "Service 2",
-    //       href: "/services/service2/",
-    //     },
-    //   ],
-    // },
-    // {
-    //   key: "Perspectives",
-    //   href: "/perspectives/",
-    // },
+    {
+      key: "Resources",
+      href: "/resources/",
+      title: "resources title",
+      description: "resources description",
+    },
     {
       key: "Contact",
       href: "/contact/",
