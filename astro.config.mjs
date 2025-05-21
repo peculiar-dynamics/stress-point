@@ -9,6 +9,8 @@ import sitemap from "@astrojs/sitemap";
 
 import icon from "astro-icon";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   // site: 'https://', // ADD SITE
@@ -16,5 +18,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [partytown(), sitemap(), icon()],
+  integrations: [partytown(), sitemap(), icon(), react()],
 });
