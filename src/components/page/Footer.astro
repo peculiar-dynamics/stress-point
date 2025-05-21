@@ -1,0 +1,148 @@
+---
+import siteInfo from "~/data/site-info";
+
+import Logo from "~/components/common/Logo.astro";
+import Socials from "~/components/common/Socials.astro";
+import InlineEmail from "~/components/common/InlineEmail.astro";
+import NestedList from "~/components/common/NestedList.astro";
+import { Image } from "astro:assets";
+
+import lightIcon from "~/assets/light-logo.svg"
+
+const currentYear = new Date().getFullYear();
+const {pages = siteInfo.pages, nested=true } = Astro.props;
+
+---
+
+<footer class="flex w-full flex-col items-center bg-[--primaryContainer] text-[--primaryFixed] p-4 overflow-x-hidden z-10">
+  <div
+    class="container flex flex-col items-center justify-between gap-4 md:flex-row md:flex-nowrap md:gap-8"
+  >
+    <!-- Logo Group -->
+    
+    <a href="/"       aria-label="navigate to home"
+      class:list={[
+        " flex shrink items-center justify-start rounded-md max-w-full object-contain  gap-2 !no-underline h-12"
+        ]}>
+
+        <!-- light screen logo -->
+        <Image src={lightIcon} alt="" class=" flex object-contain max-h-full w-auto" />
+
+      </a>
+
+    <!-- Links -->
+    <nav
+      id="footer-nav"
+      aria-label="Site Pages"
+      class="w-full text-sm md:w-3/5"
+    >
+      { nested ? (
+              <NestedList items ={siteInfo.pages} />
+        ) :(
+          // issue here where links are unclickable - temp fix default nested to true
+        <ul
+          class="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 whitespace-nowrap text-center text-[--primaryFixedDim] sm:flex-nowrap md:mt-0 lg:gap-6"
+        >
+          {
+            pages.map((page:any) => (
+              <li>
+                {page.pages ? (
+                  <Astro.self pages={page.pages} />
+                ) : (
+                  <a class="footer-link" href={page.url}>
+                    {page.key}
+                  </a>
+                )
+                }
+              </li>
+
+            ))
+          }
+        </ul>
+        )
+
+      }
+
+
+    </nav>
+
+    <section
+      class="flex h-full w-full flex-col items-center justify-between gap-2 md:w-1/5 md:items-end"
+    >
+      <!-- socials -->
+      <Socials
+        textSize="text-3xl"
+        addClass="flex min-w-fit gap-2 px-2 text-[--primaryFixedDim]"
+        links = {siteInfo.socialLinks.filter(social => social.footer).filter(social => social.active)}
+      />
+
+      <InlineEmail
+        addClasses="order-first px-2 text-xs md:order-last"
+      />
+    </section>
+  </div>
+
+  <hr class="my-2 w-full border-[--primaryFixed] sm:mx-auto" />
+
+  <div
+    class="container flex w-full flex-col items-center justify-center gap-y-4 sm:gap-y-2 text-xs text-[--primaryFixedDim] md:flex-row"
+  >
+    <div class="text-balance inline-flex items-center flex-col sm:flex-row sm:whitespace-nowrap gap-x-2 text-center px-2">
+      <a
+        class="footer-link inline-flex items-center flex-wrap sm:flex-nowrap w-fit justify-center flex-none"
+        href="https://peculiardynamics.co.uk/"
+        target="_blank"
+        >
+        Another
+        <span class="inline-flex justify-center items-center flex-none ">
+          <Image src="/assets/peculiar-dynamics.webp" alt="Peculiar Dynamics Web Development" width={24} height={24} class="object-scale-down pl-1 h-6 w-6 self-end" />
+          <span aria-hidden="true" class="pr-1 ">eculiar</span>
+        </span>Site
+      </a>
+      <span class="hidden sm:block" aria-hidden="true">|</span>
+      Copyright &copy; {currentYear}
+    </div>
+    <ul class="flex w-full flex-wrap text-center  items-end sm:text-left justify-center gap-2 p-2 md:justify-end">
+      <li class="text-balance sm:whitespace-nowrap">
+        <a class="footer-link" href="/policies/terms">Terms and Conditions</a>
+      </li>
+      <span class="hidden sm:block" aria-hidden="true">|</span>
+      <li class="text-balance sm:whitespace-nowrapp">
+        <a class="footer-link" href="/policies/privacy">Privacy Policy</a>
+      </li>
+      <span class="hidden sm:block" aria-hidden="true">|</span>
+      <li class="text-balance sm:whitespace-nowrap">
+        <a class="footer-link" href="/policies/cookies" data-astro-reload>Cookie Notice</a>
+      </li>
+      <span class="hidden sm:block" aria-hidden="true">|</span>
+      <li>
+        <a class="footer-link" href="/sitemap-index.xml">Sitemap</a>
+      </li>
+    </ul>
+  </div>
+  <slot name="legals" />
+    <!-- legals -->
+    <div
+      class="container flex w-full flex-wrap justify-between gap-2 px-2 py-2 text-center text-xs  sm:flex-nowrap sm:text-left text-balance"
+      slot="legals"
+    >
+      <p class="flex w-full flex-col items-center gap-x-2 md:flex-row">
+        {siteInfo.business.VATReg && (
+          <span class="text-nowrap">VAT #{siteInfo.business.VATReg}</span>
+          <span aria-hidden="true" class="hidden md:block">|</span>
+        )
+        
+        }
+      
+        <span>Registered in England and Wales (#{siteInfo.business.companiesReg})</span>
+      </p>
+      {siteInfo.business.regAddress &&
+        <p
+          class="flex w-full flex-col items-center justify-center gap-x-2 sm:justify-end md:flex-row"
+        >
+          Registered Office: <span>{siteInfo.business.regAddress}</span>
+        </p>
+      }
+
+    </div>
+</footer>
