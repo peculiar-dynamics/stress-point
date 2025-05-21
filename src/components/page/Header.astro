@@ -31,8 +31,9 @@ const { header = "transparent", fontColors } = Astro.props;
 </header>
 
 <style>
+    @reference "~/styles/global.css"
     .transparent-header{
-        @apply before:content-[''] before:absolute before:inset-0 before:block before:opacity-45 dark:before:opacity-85 before:z-[-5] before-gradient backdrop-filter backdrop-blur-lg backdrop-opacity-80
+        @apply before:content-[''] before:absolute before:inset-[0] before:block before:opacity-45 dark:before:opacity-85 before:z-[-5]  backdrop-filter backdrop-blur-lg backdrop-opacity-80
     }
     .before-gradient{
         @apply before:bg-gradient-to-r before:from-[--primary] before:to-[--primary] before:text-[--onPrimary]

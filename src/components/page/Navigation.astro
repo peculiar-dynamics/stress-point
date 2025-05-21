@@ -244,8 +244,10 @@ const {header, fontColors} = Astro.props
 </script>
 
 <style lang="css">
+    @reference "~/styles/global.css"
+
     .scrolled {
-      @apply bg-black
+      @apply bg-black;
     }
 
     .is-active{
@@ -271,7 +273,7 @@ const {header, fontColors} = Astro.props
         text-underline-offset: 4px;
       }
       .dd-container {
-        @apply   text-[--onSurface] bg-opacity-100  origin-top-right rounded-sm 
+        @apply   text-[--onSurface] opacity-100  origin-top-right rounded-sm 
         
       }
       .nav-drop-ul {

@@ -13,7 +13,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'https://', // ADD SITE
+  site: "https://test.com", // ADD SITE
   vite: {
     plugins: [tailwindcss()],
   },
