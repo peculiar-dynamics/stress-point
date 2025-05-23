@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-/* @import "./colors.css"; */
+@import "./colors.css";
 /* @import "./fonts.css";
 @import "./forms.css"; */
 
-@import "tailwindcss/preflight";
+/* @import "tailwindcss/preflight"; */
 
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -17,63 +17,70 @@
   --font-subtitle: "FiraSansCondensed", "sans-serif";
 
   /* CUSTOMISE */
+
+  --color-primary: #625ba7;
+  --color-secondary: #dd6f61;
+  --color-tertiary: #eebc57;
+  --color-neutral: #efe9e1;
+  --color-neutralVariant: #e5e5f0;
+
   --color-onSurface: "rgb(var(--onSurfaceTW)/<alpha-value>)";
-  --color-primary-0: "#000000";
-  --color-primary-50: "#001224";
-  --color-primary-100: "#001D36";
-  --color-primary-150: "#092742";
-  --color-primary-200: "#16324D";
-  --color-primary-250: "#233D59";
-  --color-primary-300: "#2F4865";
-  --color-primary-350: "#3B5472";
-  --color-primary-400: "#47607E";
-  --color-primary-500: "#607998";
-  --color-primary-600: "#7993B3";
-  --color-primary-700: "#93ADCF";
-  --color-primary-800: "#AEC9EB";
-  --color-primary-900: "#D1E4FF";
-  --color-primary-950: "#E9F1FF";
-  --color-primary-980: "#F8F9FF";
-  --color-primary-990: "#FDFCFF";
-  --color-primary-1000: "#FFFFFF";
+  --color-primary-0: #000000;
+  --color-primary-50: #0d0048;
+  --color-primary-100: #17095a;
+  --color-primary-150: #221864;
+  --color-primary-200: #2d256f;
+  --color-primary-250: #38317a;
+  --color-primary-300: #443c87;
+  --color-primary-350: #504893;
+  --color-primary-400: #5c55a0;
+  --color-primary-500: #756ebb;
+  --color-primary-600: #8f87d7;
+  --color-primary-700: #a9a2f4;
+  --color-primary-800: #c6bfff;
+  --color-primary-900: #e4dfff;
+  --color-primary-950: #f3eeff;
+  --color-primary-980: #fcf8ff;
+  --color-primary-990: #fffbff;
+  --color-primary-1000: #ffffff;
 
-  --color-secondary-0: "#000000";
-  --color-secondary-50: "#131100";
-  --color-secondary-100: "#1E1C00";
-  --color-secondary-150: "#292700";
-  --color-secondary-200: "#353200";
-  --color-secondary-250: "#403D00";
-  --color-secondary-300: "#4C4800";
-  --color-secondary-350: "#595400";
-  --color-secondary-400: "#666000";
-  --color-secondary-500: "#807A00";
-  --color-secondary-600: "#9B941B";
-  --color-secondary-700: "#B6AF37";
-  --color-secondary-800: "#D3CA50";
-  --color-secondary-900: "#EEE682";
-  --color-secondary-950: "#FCF48E";
-  --color-secondary-980: "#FFFADF";
-  --color-secondary-990: "#FFFBFF";
-  --color-secondary-1000: "#FFFFFF";
+  --color-secondary-0: #000000;
+  --color-secondary-50: #2d0000;
+  --color-secondary-100: #410001;
+  --color-secondary-150: #510604;
+  --color-secondary-200: #61120c;
+  --color-secondary-250: #701e16;
+  --color-secondary-300: #802920;
+  --color-secondary-350: #8f342a;
+  --color-secondary-400: #9f4035;
+  --color-secondary-500: #be584b;
+  --color-secondary-600: #df7062;
+  --color-secondary-700: #ff8a7a;
+  --color-secondary-800: #ffb4a9;
+  --color-secondary-900: #ffdad5;
+  --color-secondary-950: #ffedea;
+  --color-secondary-980: #fff8f7;
+  --color-secondary-990: #fffbff;
+  --color-secondary-1000: #ffffff;
 
-  --color-tertiary-0: "#000000";
-  --color-tertiary-50: "#181000";
-  --color-tertiary-100: "#251A00";
-  --color-tertiary-150: "#322400";
-  --color-tertiary-200: "#3F2E00";
-  --color-tertiary-250: "#4C3800";
-  --color-tertiary-300: "#5A4300";
-  --color-tertiary-350: "#684F00";
-  --color-tertiary-400: "#775A00";
-  --color-tertiary-500: "#967200";
-  --color-tertiary-600: "#B58A00";
-  --color-tertiary-700: "#D6A400";
-  --color-tertiary-800: "#F6BE1C";
-  --color-tertiary-900: "#FFDF99";
-  --color-tertiary-950: "#FFEFD2";
-  --color-tertiary-980: "#FFF8F2";
-  --color-tertiary-990: "#FFFBFF";
-  --color-tertiary-1000: "#FFFFFF";
+  --color-tertiary-0: #000000;
+  --color-tertiary-50: #190f00;
+  --color-tertiary-100: #261900;
+  --color-tertiary-150: #332300;
+  --color-tertiary-200: #412d00;
+  --color-tertiary-250: #4f3700;
+  --color-tertiary-300: #5d4200;
+  --color-tertiary-350: #6c4d00;
+  --color-tertiary-400: #7b5800;
+  --color-tertiary-500: #99700c;
+  --color-tertiary-600: #b68a29;
+  --color-tertiary-700: #d3a441;
+  --color-tertiary-800: #f1bf5a;
+  --color-tertiary-900: #ffdea4;
+  --color-tertiary-950: #ffefd6;
+  --color-tertiary-980: #fff8f2;
+  --color-tertiary-990: #fffbff;
+  --color-tertiary-1000: #ffffff;
 
   /* DEFAULT COLOURS */
   --color-red-50: oklch(0.971 0.013 17.38);
@@ -494,6 +501,22 @@
       animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
   }
+
+  /* @keyframes fadeOut {
+    "0%": { backgroundColor: theme("colors.red.300") },
+    "100%": { backgroundColor: theme("colors.transparent") }
+  } */
+
+  @keyframes fadeIn: {
+    "0%": {
+      opacity: "0%";
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    "100%": {
+      opacity: "100%";
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+  }
 }
 
 @layer base {
@@ -627,14 +650,14 @@
     @apply bg-gradient-to-r from-primary-600 to-primary-100 text-white;
   }
   .primaryFill {
-    @apply bg-[--primary] text-[--onPrimary];
+    @apply bg-(--primary) text-(--onPrimary);
   }
 
   .primaryContainer {
-    @apply bg-[--primaryContainer] text-[--onPrimaryContainer];
+    @apply bg-(--primaryContainer) text-(--onPrimaryContainer);
   }
   .primaryFixed {
-    @apply bg-[--primaryFixedDim] dark:bg-[--primaryFixed] text-[--onPrimaryFixed];
+    @apply bg-(--primaryFixedDim) dark:bg-(--primaryFixed) text-(--onPrimaryFixed);
   }
 
   [data-icon] {
@@ -642,7 +665,7 @@
   }
 
   .subtitle {
-    @apply font-subtitle text-base font-semibold uppercase text-[--primary];
+    @apply font-subtitle text-base font-semibold uppercase text-(--primary);
   }
 
   .before-gradient {
@@ -650,7 +673,7 @@
   }
 
   .button {
-    @apply capitalize duration-300 ease-in-out transition-all hover:underline focus:underline sm:min-w-24 rounded-md font-medium;
+    @apply capitalize duration-300 ease-in-out transition-all hover:underline focus:underline sm:min-w-24 rounded-lg font-medium;
     /* padding: 0.5rem 0.75rem;
     font-size: 1rem;
     align-items: center;
@@ -665,19 +688,22 @@
     @apply text-neutral-100 bg-neutral-800;
   } */
   .button.elevated {
-    @apply bg-[--surfaceContainerLow] text-[--primary] shadow hover:shadow-md focus:bg-primary-400/10 hover:bg-primary-400/[0.08] focus:text-primary-400;
+    @apply bg-(--surfaceContainerLow) text-(--primary) shadow hover:shadow-md focus:bg-primary-400/10 hover:bg-primary-400/[0.08] focus:text-primary-400;
   }
   .button.filled {
-    @apply bg-[--tertiaryContainer] text-[--onTertiaryContainer] hover:opacity-[0.85] hover:text-[--onPrimary] focus:opacity-[0.85]  hover:shadow;
+    @apply bg-(--tertiaryContainer) text-(--onTertiaryContainer) hover:opacity-[0.85] hover:text-(--onPrimary) focus:opacity-[0.85]  hover:shadow;
+  }
+  .button.filled-alt {
+    @apply bg-(--secondaryContainer) text-white hover:opacity-[0.85] hover:text-(--onSecondaryContainer) focus:opacity-[0.85]  hover:shadow;
   }
   .button.tonal {
-    @apply bg-[--secondaryContainer] text-[--onSecondaryContainer] hover:bg-[--primaryFixedDim];
+    @apply bg-(--secondaryContainer) text-(--onSecondaryContainer) hover:bg-(---primaryFixedDim);
   }
   .button.outlined {
-    @apply text-[--primary] border  border-[--outline] rounded-md hover:bg-primary-400/[0.08];
+    @apply text-(--primary) border  border-(--outline) rounded-md hover:bg-primary-400/[0.08];
   }
   .button.outlined-filled {
-    @apply bg-[--surface] text-[--primary] dark:bg-transparent dark:text-[--secondary] border  border-[--outline] rounded-md hover:bg-primary-400/[0.08];
+    @apply bg-(--surface) text-(--primary) dark:bg-transparent dark:text-(--secondary) border  border-(--outline) rounded-md hover:bg-primary-400/[0.08];
   }
 
   .elevated.disabled,
@@ -687,11 +713,11 @@
   }
 
   .button.color-primary {
-    @apply border-2 border-[--outline] hover:bg-primary-400 hover:text-white text-neutral-100 bg-primary-300;
+    @apply border-2 border-(--outline) hover:bg-primary-400 hover:text-white text-neutral-100 bg-primary-300;
   }
 
   .button.color-secondary {
-    @apply border-2 border-[--secondary-background] bg-transparent font-semibold capitalize text-[--on-surface] hover:border-transparent hover:bg-[--secondary-container] hover:text-[--on-secondary-container];
+    @apply border-2 border-(--secondary-background) bg-transparent font-semibold capitalize text-(--on-surface) hover:border-transparent hover:bg-(--secondary-container) hover:text-(--on-secondary-container);
   }
 
   .button.size-tiny {
@@ -727,7 +753,7 @@
     @apply text-onSurface/[0.38] hover:bg-onSurface/[0.08];
   }
   .primaryFill.text-btn {
-    @apply text-[--onPrimary];
+    @apply text-(--onPrimary);
   }
 
   #footer-nav {

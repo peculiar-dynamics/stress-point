@@ -4,16 +4,19 @@ import siteInfo from "~/data/site-info";
 import type { SocialLink } from "~/data/site-info";
 
 import ExternalLink from "~/components/common/ExternalLink.astro"
+import type { boolean } from "astro:schema";
 
 export type Props = {
     background?: string;
     textSize?: string;
+    iconSize?: string;
     addClass?: string;
     links?: SocialLink[];
+    label?: boolean;
 }
 
 
-const { background, textSize= "text-4xl", addClass, links=siteInfo.socialLinks.filter(link => link.active) } = Astro.props
+const { background, textSize= "text-4xl", iconSize, addClass, links=siteInfo.socialLinks.filter(link => link.active), label } = Astro.props
 
 ---
 
@@ -22,9 +25,13 @@ const { background, textSize= "text-4xl", addClass, links=siteInfo.socialLinks.f
 <div class:list={["flex ", `${addClass}`]}>
     { links.map( social => (
 
-        <ExternalLink class={`flex items-center justify-center w-fit min-w-fit text-inherit transition-colors duration-300 hover:text-[--action-color-state] rounded-full ${background} ${textSize}`} href={social.href}>
+        <ExternalLink class={`flex items-center justify-center w-fit min-w-fit text-inherit transition-colors duration-300 hover:text-[--action-color-state] rounded-full ${background} `} href={social.href}>
             <span class="sr-only">{`link to ${siteInfo.name} on ${social.platform}`}</span>
-            <Icon name={social.icon} class="flex items-center justify-center rounded-full p-1" aria-hidden="true"/>
+            <Icon name={social.icon}  class={`flex items-center justify-center rounded-full p-1 ${iconSize ? iconSize : textSize}`} aria-hidden="true"/>
+            {
+                label &&
+                    <span class={`capitalize ${textSize}`}>{social.platform}</span>
+            }
         </ExternalLink>
     ) ) }
 </div>

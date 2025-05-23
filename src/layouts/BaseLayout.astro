@@ -1,10 +1,11 @@
 ---
-import '../styles/global.css'
+import '~/styles/global.css'
 
 import BaseHead, { type Props as HeadProps } from '~/components/page/BaseHead.astro';
 import SkipLink from "~/components/common/SkipLink.astro";
 import Header, { type Props as HeaderProps } from "~/components/page/Header.astro";
 import Footer from "~/components/page/Footer.astro";
+import Footer9 from '~/components/page/Footer9.astro';
 import Cookies from "~/components/cookies/Cookies.astro";
 
 interface Props extends HeadProps, HeaderProps {
@@ -12,7 +13,7 @@ interface Props extends HeadProps, HeaderProps {
     type?: string;
 }
 
-const { class: classList, header = "transparent", type = "website", ...head } = Astro.props;
+const { class: classList, header = "opaque", type = "website", ...head } = Astro.props;
 ---
 
 <html dir="ltr" lang="en">
@@ -20,16 +21,17 @@ const { class: classList, header = "transparent", type = "website", ...head } = 
         <BaseHead {...head} />
 	</head>
 
-	<body>
+	<body class="flex flex-col w-full items-center bg-neutral">
 		<SkipLink />
         
-        <Header {header} fontColors="text-[--onPrimary] hover:text-[--onSurface] hover:bg-[--surfaceContainer]  rounded-md uppercase"/>
+        <Header {header} fontColors=" hover:text-(--onPrimary) hover:bg-(--surfaceTint)  rounded-md "/>
 
-        <main class:list={["relative z-0  flex-auto w-full max-w-full overflow-x-hidden flex  flex-col items-center justify-start  bg-[--primary] text-[--onSurface]" ]}>
+        <main class:list={["relative z-0  flex-auto max-w-7xl w-[80svw]  overflow-x-hidden flex  flex-col items-center justify-start  text-(--onSurface) my-24" ]}>
             <slot />
         </main>
 
-        <Footer />
+        
+        <Footer9 />
         
         <!-- <Cookies /> -->
 	</body>

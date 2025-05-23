@@ -5,21 +5,22 @@ import ResponsiveToggle from "~/components/common/ResponsiveToggle.astro";
 
 const {header, fontColors} = Astro.props
 
+const pages = siteInfo.pages.filter(page => page.nav)
 
 
 ---
 <nav aria-label="Primary" id="main-nav" class:list={[
     " lg:pb-0 flex-auto max-w-full lg:max-w-2/3 flex container items-center gap-2  min-w-fit justify-end order-2  ",  
-    {"md:order-last lg:order-2 lg:w-fit ": siteInfo.pages.length>4}
+    {"md:order-last lg:order-2 lg:w-fit ": pages.length>4}
     ]}>
     <ul id="nav-expanded" class:list={[ " gap-1 hidden  relative md:flex items-center text-base font-medium   whitespace-nowrap "
         ]} aria-expanded="false" tabindex="-1" >
 
         {
-          siteInfo.pages.map((page) => (
+          pages.map((page) => (
             <li
               class:list={[
-                "menu-item relative flex flex-col items-center justify-center  w-full",
+                "menu-item relative flex flex-col items-center justify-center  w-full ",
                 { "has-dropdown": page?.children && page.children.length > 0 }, fontColors
               ]}
               tabindex="-1"
@@ -28,8 +29,8 @@ const {header, fontColors} = Astro.props
               {page.children ? (
                 <button
                   class:list={[
-                    "nav-button",
-                    "flex gap-1 items-center justify-center relative  px-3 py-2  w-full",
+                    "nav-button ",
+                    "flex gap-1 items-center justify-center relative  px-3 py-2  w-full ",
                     { "is-active": Astro.url.pathname === page.href },
                   ]}
                   aria-current={Astro.url.pathname === page.href ? 'page' : null}
@@ -39,14 +40,14 @@ const {header, fontColors} = Astro.props
                   aria-controls={`${page.key}_menu`}
                   tabindex="0"
                 >
-                  <span class="max-w-72 min-w-28 w-full relative inline-flex items-center justify-center gap-2 leading-6">
+                  <span class="max-w-72 min-w-28 w-full relative inline-flex items-center justify-center gap-2 leading-6 ">
                     {page.key}
                     <Icon name="ph:caret-down-light" class="h-6 w-6 absolute right-0 sm:relative " aria-hidden="true" />
                   </span>
                                    
                 </button>
 
-                <ul id={`${page.key}_menu`} class:list={[ "hidden nav-drop-ul   sm:absolute flex-col sm:top-12  z-40 w-full min-w-64 sm:shadow-xl py-2 sm:mt-0 sm:py-4 ", "bg-[--surfaceContainer] " ]}  aria-label={`${page.key} menu`} aria-expanded="false" >
+                <ul id={`${page.key}_menu`} class:list={[ "hidden nav-drop-ul   sm:absolute flex-col sm:top-12  z-40 w-full min-w-64 sm:shadow-xl py-2 sm:mt-0 sm:py-4 ", "bg-(--surfaceContainer) " ]}  aria-label={`${page.key} menu`} aria-expanded="false" >
                   {page.children.map((child) => (
                     <li class:list={["submenu-item  flex w-full "]}  >
                       <a href={child.href} class="nav-li-link nav-drop-link w-full px-3 py-2" tabindex="0">
@@ -75,7 +76,7 @@ const {header, fontColors} = Astro.props
     </ul>
 
     <!-- Hamburger -->
-    <ResponsiveToggle colors="text-[--onPrimary] hover:text-[--onSurface] hover:bg-[--surfaceContainer]" />
+    <ResponsiveToggle colors="text-white hover:text-(--onSurface) hover:bg-(--surfaceContainer)" />
 </nav>
 
 <script>
@@ -273,7 +274,7 @@ const {header, fontColors} = Astro.props
         text-underline-offset: 4px;
       }
       .dd-container {
-        @apply   text-[--onSurface] opacity-100  origin-top-right rounded-sm 
+        @apply   text-(--onPrimary) bg-(--surfaceContainer)  origin-top-right rounded-sm  max-w-full
         
       }
       .nav-drop-ul {
@@ -283,7 +284,7 @@ const {header, fontColors} = Astro.props
         @apply  absolute text-center shadow-xl flex-col sm:flex-row  md:items-stretch justify-around  w-[95vw] right-0 left-0 mx-auto top-16 mt-6 py-2 sm:px-2 z-30 bg-[--primary] dark:bg-[--primaryFixed] border dark:border-[--primary] border-[--outline]  ;
       }
       .dd-container > li:hover,  .dd-container > li:focus-within {
-        @apply   bg-onSurface/[0.08] text-[--onSurfaceVariant]
+        @apply   bg-onSurface/[0.08] text-(--onSurfaceVariant)
       }
 
 

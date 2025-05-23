@@ -1,0 +1,176 @@
+---
+import siteInfo from "~/data/site-info";
+
+import Logo from "~/components/common/Logo.astro";
+import Socials from "~/components/common/Socials.astro";
+import InlineEmail from "~/components/common/InlineEmail.astro";
+import NestedList from "~/components/common/NestedList.astro";
+import InlineEmailNetlify from "~/components/react/InlineEmailNetlify";
+
+
+import { Image } from "astro:assets";
+
+import lightIcon from "~/assets/light-logo.svg"
+
+const currentYear = new Date().getFullYear();
+const {pages = siteInfo.pages, nested=true } = Astro.props;
+
+---
+
+
+
+<footer class="flex flex-col gap-6 items-center text-sm text-center md:text-left my-2">
+    <!-- Box content -->
+    <div class="flex flex-col md:flex-row gap-6 md:gap-2 border-pink-300  max-w-5xl w-[80svw] border px-4 py-8">
+        <!-- Box left -->
+        <div class="flex flex-col gap-2 flex-auto  justify-center w-full">
+
+            <a href="/"       aria-label="navigate to home"
+            class:list={[
+                " flex shrink items-center justify-center md:justify-start rounded-md max-w-full object-contain gap-2 !no-underline h-12"
+                ]}>
+        
+                <!-- light screen logo -->
+                <Image src={lightIcon} alt="" class=" flex object-contain max-h-full w-auto" />
+        
+            </a>
+
+            
+            <div class="">
+                Join our newsletter to stay up to date on features and releases.
+            </div>
+        
+            
+            <div class="w-full ">
+                <InlineEmailNetlify client:load transition:persist />
+            </div>
+            
+        </div>
+        <!-- Box right -->
+        <div class="flex flex-col gap-6 md:gap-4 flex-auto w-full  md:flex-row justify-around">
+            <!-- Col 1 -->
+            <nav
+                id="footer-nav"
+                aria-label="Site Pages"
+                class="flex flex-col gap-2"
+            >
+                <a href="/" class="font-semibold">
+                    Home
+                </a>
+                <ul class="flex flex-col gap-2 text-xs w-full text-center md:text-left">
+                    {
+                        pages.map((page:any) => (
+                          <li class="w-full">
+                            {page.pages ? (
+                              <Astro.self pages={page.pages} />
+                            ) : (
+                              <a class="footer-link " href={page.url}>
+                                {page.key}
+                              </a>
+                            )
+                            }
+                          </li>
+            
+                        )).slice(1)
+                      }
+
+                </ul>
+            </nav>
+            <!-- Col 2 -->
+            <!-- <div class="flex flex-col gap-2">
+                <div class="font-semibold">
+                    Column Two
+                </div>
+                <div class="flex flex-col gap-2 text-xs">
+                    <a blocks-name="footer9_link-6" href="#" class="footer9_link">Link Six</a>
+                    <a blocks-name="footer9_link-7" href="#" class="footer9_link">Link Seven</a>
+                    <a blocks-name="footer9_link-8" href="#" class="footer9_link">Link Eight</a>
+                    <a blocks-name="footer9_link-9" href="#" class="footer9_link">Link Nine</a>
+                    <a blocks-name="footer9_link-10" href="#" class="footer9_link">Link Ten</a>
+                </div>
+            </div> -->
+            <!-- Socials -->
+            <div class="flex flex-col gap-2">
+                <div class="font-semibold">
+                    Follow Us
+                </div>
+                <Socials
+                    iconSize="text-3xl"
+                    textSize="text-xs"
+                    addClass="flex flex-col min-w-fit gap-1 text-[--primaryFixedDim] -ml-1   items-center md:items-start"
+                    links = {siteInfo.socialLinks.filter(social => social.footer).filter(social => social.active)}
+                    label
+                />
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Below box -->
+    <div class="flex flex-col gap-1 max-w-5xl w-[80svw] text-xs">
+            <!-- legals -->
+            <slot name="legals" />
+            <div
+              class=" flex w-full flex-wrap justify-between gap-2 text-center  sm:flex-nowrap sm:text-left text-balance "
+              slot="legals"
+            >
+              <p class="flex w-full flex-col items-center gap-x-2 md:flex-row">
+                {siteInfo.business.VATReg && (
+                  <span class="text-nowrap">VAT #{siteInfo.business.VATReg}</span>
+                  <span aria-hidden="true" class="hidden md:block">|</span>
+                )
+                
+                }
+              
+                <span>Registered in England and Wales (#{siteInfo.business.companiesReg})</span>
+              </p>
+              {siteInfo.business.regAddress &&
+                <p
+                  class="flex w-full flex-col items-center justify-center gap-x-2 sm:justify-end md:flex-row"
+                >
+                  Registered Office: <span>{siteInfo.business.regAddress}</span>
+                </p>
+              }
+        
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-2 justify-between">
+                <div class="flex gap-1 flex-auto w-full items-center flex-col md:flex-row">
+                    <a
+                        class="footer-link inline-flex items-center flex-wrap sm:flex-nowrap w-fit justify-center flex-none"
+                        href="https://peculiardynamics.co.uk/"
+                        target="_blank"
+                        >
+                        Another
+                        <span class="inline-flex justify-center items-center flex-none ">
+                        <Image src="/assets/peculiar-dynamics.webp" alt="Peculiar Dynamics Web Development" width={24} height={24} class="object-scale-down pl-1 h-6 w-6 self-end" />
+                        <span aria-hidden="true" class="pr-1 ">eculiar</span>
+                        </span>Site
+                    </a>
+                    <span class="hidden sm:block" aria-hidden="true">|</span>
+                    <span class="">Copyright &copy; {currentYear}</span>
+                </div>
+                <ul class="flex w-full flex-wrap text-center  items-end sm:text-left justify-center gap-2 p-2 md:justify-end">
+                    <li class="text-balance sm:whitespace-nowrap">
+                      <a class="footer-link" href="/policies/terms">Terms and Conditions</a>
+                    </li>
+                    <span class="hidden sm:block" aria-hidden="true">|</span>
+                    <li class="text-balance sm:whitespace-nowrapp">
+                      <a class="footer-link" href="/policies/privacy">Privacy Policy</a>
+                    </li>
+                    <span class="hidden sm:block" aria-hidden="true">|</span>
+                    <li class="text-balance sm:whitespace-nowrap">
+                      <a class="footer-link" href="/policies/cookies" data-astro-reload>Cookie Notice</a>
+                    </li>
+                    <span class="hidden sm:block" aria-hidden="true">|</span>
+                    <li>
+                      <a class="footer-link" href="/sitemap-index.xml">Sitemap</a>
+                    </li>
+                  </ul>
+            </div>
+
+
+
+    </div>
+
+</footer>

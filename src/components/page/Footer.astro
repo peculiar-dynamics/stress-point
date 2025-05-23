@@ -5,6 +5,9 @@ import Logo from "~/components/common/Logo.astro";
 import Socials from "~/components/common/Socials.astro";
 import InlineEmail from "~/components/common/InlineEmail.astro";
 import NestedList from "~/components/common/NestedList.astro";
+import InlineEmailNetlify from "~/components/react/InlineEmailNetlify";
+
+
 import { Image } from "astro:assets";
 
 import lightIcon from "~/assets/light-logo.svg"
@@ -16,7 +19,7 @@ const {pages = siteInfo.pages, nested=true } = Astro.props;
 
 <footer class="flex w-full flex-col items-center bg-[--primaryContainer] text-[--primaryFixed] p-4 overflow-x-hidden z-10">
   <div
-    class="container flex flex-col items-center justify-between gap-4 md:flex-row md:flex-nowrap md:gap-8"
+    class="container flex flex-col items-center justify-between gap-4 md:flex-row md:flex-nowrap md:gap-8 max-w-(80svw) w-[80svw]"
   >
     <!-- Logo Group -->
     
@@ -146,3 +149,4 @@ const {pages = siteInfo.pages, nested=true } = Astro.props;
 
     </div>
 </footer>
+

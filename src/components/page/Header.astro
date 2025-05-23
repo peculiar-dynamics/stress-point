@@ -13,17 +13,17 @@ export interface Props {
     fontColors?: string;
 }
 
-const { header = "transparent", fontColors } = Astro.props;
+const { header , fontColors } = Astro.props;
 ---
 
 
-<header class:list={[header === "opaque" ? "shadow-lg sticky bg-[--surfaceContainer]" : "fixed transparent-header ", "top-0 z-30  flex  justify-between items-center  gap-y-2 py-2 px-4 w-full max-w-full ", {"md:flex-wrap lg:flex-wrap-none ": siteInfo.pages.length>4}, header === "transparent" ? "text-white " : "text-[--onSurfaceVariant]"]}>
+<header class:list={[header === "opaque" ? "shadow-lg sticky bg-primary text-white rounded-full" : "fixed transparent-header text-white", "top-4 z-30  flex  justify-between items-center  gap-y-2 py-2 px-4  max-w-5xl w-[80svw]  relative", {"md:flex-wrap lg:flex-wrap-none ": siteInfo.pages.length>4}]}>
     <Logo header />
     <Navigation {header} {fontColors}  />
-    <div class="order-3 flex items-center justify-center px-2 gap-x-2 ">
+    <div class="order-1 sm:order-3 flex items-center justify-center px-2 gap-x-2 ">
         <!-- add cta button -->
         { siteInfo.navCta &&
-            <Button addClasses="min-[420px]:inline-flex hidden size-tiny sm:size-small" text={siteInfo.navCta.label} href={siteInfo.navCta.href} type="outlined-filled"  />
+            <Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text={siteInfo.navCta.label} href={siteInfo.navCta.href} type="filled-alt"  />
         }
         <DarkMode colors={fontColors} />
     </div>

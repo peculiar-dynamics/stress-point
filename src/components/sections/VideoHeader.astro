@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets"
+import siteInfo from "~/data/site-info";
+
+import ScrollDown from "~/components/common/ScrollDown.astro";
+
+import logo from "../../assets/350x100.svg"
+
+const {background, subtitle, title, tagline, alt=siteInfo.name, scroll, image, ...scrollDown } = Astro.props
+
+import darkHeroImage from "~/assets/dark-icon.png"
+import heroImage from "~/assets/light-icon.png"
+import type { ActionError } from "astro:actions";
+---
+<section class:list={["w-full relative z-10 flex lg:gap-8 lg:justify-center justify-start items-center  px-4 sm:px-8 text-balance pb-4 sm:pb-8  flex-auto rounded-lg m-8  overflow-hidden bg-yellow-100 ", {"min-h-[85svh] lg:min-h-[60svh] max-h-full": scroll}, background ==="gradient" ? "gradient" : background]}>
+    
+
+
+        <div class="relative z-10 w-full lg:w-1/2 flex-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+            <div class="max-w-prose text-left">
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+                    {title}
+                </h1>
+            
+                <p class="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+                    {tagline}
+                </p>
+        
+                <slot/>
+      
+            </div>
+            { scroll &&
+                <ScrollDown large {...scrollDown} />
+            }
+        </div>
+
+        
+
+        <video muted autoplay loop transition:persist class="flex-auto absolute inset-0 min-w-full min-h-full z-0 object-cover object-center animate-fadeIn opacity-50">
+            <source
+                src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4"
+                type="video/mp4"
+            />
+        </video>
+
+    
+    
+</section>
+

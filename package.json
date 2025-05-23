@@ -18,6 +18,7 @@
     "@types/react-dom": "^19.1.5",
     "astro": "^5.7.13",
     "astro-icon": "^1.1.5",
+    "pluralize": "^8.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.4",
@@ -30,6 +31,7 @@
     "@iconify-json/ph": "^1.2.2",
     "@iconify/react": "^6.0.0",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/pluralize": "^0.0.33"
   }
 }

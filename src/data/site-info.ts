@@ -67,7 +67,7 @@ const siteInfo: SiteInfo = {
     companiesReg: "123456789",
     // VATReg: "123456",
     // regAddress: "23 Angus Court, Winsford, England, CW7 1GN",
-    // tradingAddress: "42 Wallaby Way, Sydney",
+    tradingAddress: "42 Wallaby Way, Sydney",
     // phone: "01234 567 890",
   },
   image: {
@@ -85,24 +85,27 @@ const siteInfo: SiteInfo = {
       contact: true,
     },
 
-    // {
-    //   platform: "twitter",
-    //   href: "https://twitter.com/astrodotbuild",
-    //   me: "https://twitter.com/astrodotbuild",
-    //   text: "Follow Astro on Twitter",
-    //   icon: "mdi:twitter",
-    // },
-    // {
-    //   platform: "facebook",
-    //   href: "https://m.webtoo.ls/@astro",
-    //   me: "https://m.webtoo.ls/@astro",
-    //   text: "Follow Astro on Mastodon",
-    //   footerOnly: true,
-    //   icon: "mdi:facebook",
-    //   active: true,
-    //   footer: true,
-    //   contact: true,
-    // },
+    {
+      platform: "twitter",
+      href: "https://twitter.com/astrodotbuild",
+      me: "https://twitter.com/astrodotbuild",
+      text: "Follow Astro on Twitter",
+      icon: "mdi:twitter",
+      active: true,
+      footer: true,
+      contact: true,
+    },
+    {
+      platform: "facebook",
+      href: "https://m.webtoo.ls/@astro",
+      me: "https://m.webtoo.ls/@astro",
+      text: "Follow Astro on Mastodon",
+      footerOnly: true,
+      icon: "mdi:facebook",
+      active: true,
+      footer: true,
+      contact: true,
+    },
     // {
     //   platform: "instagram",
     //   href: "https://instagram.com/glosfarm",
@@ -147,7 +150,9 @@ const siteInfo: SiteInfo = {
         },
         {
           key: "SPHERE App",
-          href: "/solutions/sphere-app/",
+          href: "/solutions/sphere/",
+          title: "sphere title",
+          description: "sphere description",
         },
         // {
         //   key: "Service 2",
@@ -161,6 +166,7 @@ const siteInfo: SiteInfo = {
       href: "/resources/",
       title: "resources title",
       description: "resources description",
+      nav: true,
     },
     {
       key: "Contact",
@@ -168,12 +174,12 @@ const siteInfo: SiteInfo = {
       title: "Contact Us: tagline",
       description:
         "Have questions of want to sign up? Get in touch with the team today.",
-      nav: true,
+      nav: false,
     },
   ],
   navCta: {
-    label: "EXPLORE PLANS",
-    href: "/approach/#plan1",
+    label: "Contact",
+    href: "/contact/",
   },
   cookies: {
     GA4: "G-XXXXXXXXXX",

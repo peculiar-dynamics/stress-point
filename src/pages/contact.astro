@@ -1,0 +1,77 @@
+---
+
+
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components"
+import BaseLayout from "~/layouts/BaseLayout.astro"
+
+
+import ContentSplit from "~/components/sections/ContentSplit.astro"
+import Feature from "~/components/common/Feature.astro"
+import InlineEmail from "~/components/common/InlineEmail.astro"
+import Socials from "~/components/common/Socials.astro"
+import ContactMessageNetlify from "~/components/react/ContactMessageNetlify"
+
+
+import background from "~/assets/woman.jpg"
+import siteInfo from "~/data/site-info";
+
+const title = siteInfo.pages[4].title
+const description = siteInfo.pages[4].description
+const address = siteInfo.business.tradingAddress
+
+--- 
+
+
+<BaseLayout {title} {description} >
+    
+
+    <div class=" flex w-full relative  items-center justify-center z-20 flex-auto bg-(--primaryContainer) ">
+        <ContentSplit title="Get in Touch" subtitle="Connect" subtitleColor="text-[--onPrimary]" id="contact" addClasses="h-full " sectionbg="max-w-screen-lg flex w-full">
+            <Fragment slot="heading">
+                <div class="flex flex-col gap-8">
+                    <p>We'd love to hear from you. Reach out today!</p>
+                    <ul class="text-sm flex flex-col gap-4">
+                        <li class="w-full flex gap-4 items-center">
+                            <Icon name="ph:envelope-light" class="size-5" aria-hidden="true" />
+                            <InlineEmail />
+                        </li>
+                        <li class="w-full flex gap-4 items-center">
+                            <Icon name="ph:phone-light" class="size-5" aria-hidden="true" />
+                            <span>+1 (555) 000-0000</span>
+                        </li>
+                        <li class="w-full flex gap-4 items-center">
+                            <Icon name="ph:map-pin-light" class="size-5" aria-hidden="true" />
+                            <span>{address}</span>
+                        </li>
+                    </ul>
+                    <Feature title="Find us Online" bg="primaryFill text-primary-950 dark:text-primary-200">
+                        <Socials
+                            textSize="text-3xl"
+                            addClass="flex min-w-fit w-full gap-2 px-2 text-[--primaryFixedDim]"
+                    
+                        />
+                    </Feature>
+                </div>
+
+            
+            </Fragment>
+        
+        
+            <div class="flex h-full max-w-lg w-full flex-none flex-col  items-center justify-center  p-4 shadow sm:p-6 lg:max-w-5xl lg:p-8 lg:py-14 ">
+                <p
+                aria-roledescription="subtitle"
+                class="font-subtitle text-base font-semibold uppercase text-[--onPrimaryContainer] text-left w-full mb-8">
+                    Send us a message
+                </p>
+                <ContactMessageNetlify client:load transition:persist />
+            </div>
+        
+        </ContentSplit>
+    </div>
+
+    <!-- <div class="absolute  inset-0  gradient z-0">
+        <Image src={background} alt="" class="absolute max-w-3xl inset-y-0 right-0 lg:right-28 2xl:right-48 object-cover object-top  mix-blend-lighten" />
+    </div> -->
+
+</BaseLayout>
