@@ -13,7 +13,7 @@ export interface Props {
 const {text, logos, id} = Astro.props
 
 
-
+import placeholder from "~/assets/partner-logos/techrepublic.svg"
 
 ---
 
@@ -27,7 +27,7 @@ const {text, logos, id} = Astro.props
             <!-- LOGOS -->
         {
             logos.map((logo:any, i: any) => (
-                <img src={logo.src} alt={logo.name} class="h-12 " />  
+                <Image src={placeholder} alt={logo.name} class="h-12 max-w-32" />  
             ))
         }
         

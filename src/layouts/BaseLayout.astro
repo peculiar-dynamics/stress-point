@@ -27,7 +27,7 @@ const { class: classList, header = "opaque", type = "website", ...head } = Astro
         
         <Header {header} fontColors=" hover:text-(--onPrimary) hover:bg-(--surfaceTint)  rounded-md "/>
 
-        <main class:list={["relative z-0  flex-auto max-w-7xl w-[80svw]  overflow-x-hidden flex  flex-col items-center justify-start  text-(--onSurface) my-12" ]}>
+        <main class:list={["relative z-0  flex-auto max-w-7xl w-[80svw]  overflow-x-hidden flex  flex-col items-center justify-start  text-(--onSurface) my-12 space-y-8 md:space-y-32" ]}>
             <slot />
         </main>
 
