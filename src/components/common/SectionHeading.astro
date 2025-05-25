@@ -10,7 +10,8 @@ export interface Props {
   id?:string;
   addClasses?: string;
   center?:any;
-	
+	subtitleColor?:string;
+  subtext?: string;
 }
 
 
@@ -23,6 +24,9 @@ const {
   center,
   id,
   addClasses = "w-full",
+  subtitleColor,
+  subtext
+
 } = Astro.props;
 
 const centering = center
@@ -31,16 +35,16 @@ const centering = center
 ---
 
 <div
-  class:list={["max-w-screen-xl flex flex-col sm:min-w-[20ch] gap-2 text-pretty w-full items-center justify-center", center ? " text-center" : "text-center md:items-start md:text-left", addClasses]}
+  class:list={["max-w-screen-xl flex flex-col sm:min-w-[20ch] space-y-2 text-pretty w-full items-center justify-center", center ? " text-center" : "text-center md:items-start md:text-left", addClasses]}
 >
   {icon && (
-      <Icon name={icon} class="text-4xl text-[--tertiary]" aria-hidden="true" />
+      <Icon name={icon} class="text-4xl text-(--tertiary)" aria-hidden="true" />
   )}
 
   {subtitle && (
       <p
         aria-roledescription="subtitle"
-        class=" subtitle font-subtitle text-[--tertiaryContainer]"
+        class:list={[" subtitle font-subtitle ", subtitleColor]}
       >
         {subtitle}
       </p>
@@ -60,6 +64,11 @@ const centering = center
       }
     </h1>
   )}
+  {subtext && (
+      <div class="flex w-full max-w-[50ch] flex-col gap-2  sm:py-4 lg:text-lg">
+        {subtext}
+      </div>
+  )}
 
   <!-- only for title sub-text not content -->
   {
@@ -68,5 +77,6 @@ const centering = center
         <slot />
       </div>
     )
-  }
+    }
+
 </div>

@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets"
+import siteInfo from "~/data/site-info";
+
+import SectionHeading from "~/components/common/SectionHeading.astro";
+
+
+
+const {background,  alt=siteInfo.name, scroll, image, center, ...heading } = Astro.props
+
+
+---
+<section class:list={["w-full relative z-10 flex flex-col lg:gap-8 lg:justify-center justify-start items-center  px-4 sm:px-8 text-balance pb-4 sm:pb-8  flex-auto rounded-lg m-8 lg:my-16 overflow-hidden py-16  ", {"min-h-[85svh] lg:min-h-[60svh] max-h-full": scroll}, background ==="gradient" ? "gradient" : background]}>
+    
+
+
+        <div class:list={[" w-full flex flex-auto px-4  sm:px-6  lg:px-8 ", center ? "items-center justify-center text-center" : "lg:w-1/2"]}>
+            <div class="max-w-prose text-left">
+                <SectionHeading {center} {...heading}>
+                    <slot name="heading" />
+                </SectionHeading>
+        
+                <slot/>
+      
+            </div>
+
+        </div>
+
+        <slot name="content" />
+    
+</section>
+

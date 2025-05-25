@@ -13,7 +13,7 @@ const pages = siteInfo.pages.filter(page => page.nav)
     " lg:pb-0 flex-auto max-w-full lg:max-w-2/3 flex container items-center gap-2  min-w-fit justify-end order-2  ",  
     {"md:order-last lg:order-2 lg:w-fit ": pages.length>4}
     ]}>
-    <ul id="nav-expanded" class:list={[ " gap-1 hidden  relative md:flex items-center text-base font-medium   whitespace-nowrap "
+    <ul id="nav-expanded" class:list={[ " gap-1 hidden  relative md:flex items-center text-base font-light  whitespace-nowrap "
         ]} aria-expanded="false" tabindex="-1" >
 
         {
@@ -47,7 +47,7 @@ const pages = siteInfo.pages.filter(page => page.nav)
                                    
                 </button>
 
-                <ul id={`${page.key}_menu`} class:list={[ "hidden nav-drop-ul   sm:absolute flex-col sm:top-12  z-40 w-full min-w-64 sm:shadow-xl py-2 sm:mt-0 sm:py-4 ", "bg-(--surfaceContainer) " ]}  aria-label={`${page.key} menu`} aria-expanded="false" >
+                <ul id={`${page.key}_menu`} class:list={[ "hidden nav-drop-ul   sm:absolute flex-col sm:top-12  z-40 w-full min-w-64 sm:shadow-xl py-2 sm:mt-0 sm:py-4 ", "bg-(--surfaceTint) " ]}  aria-label={`${page.key} menu`} aria-expanded="false" >
                   {page.children.map((child) => (
                     <li class:list={["submenu-item  flex w-full "]}  >
                       <a href={child.href} class="nav-li-link nav-drop-link w-full px-3 py-2" tabindex="0">
@@ -274,17 +274,17 @@ const pages = siteInfo.pages.filter(page => page.nav)
         text-underline-offset: 4px;
       }
       .dd-container {
-        @apply   text-(--onPrimary) bg-(--surfaceContainer)  origin-top-right rounded-sm  max-w-full
+        @apply   text-(--onPrimary) bg-(--surfaceTint)  origin-top-right rounded-sm  max-w-full
         
       }
       .nav-drop-ul {
         @apply sm:max-w-72 sm:min-w-28 w-full sm:w-64
       }
       .dd-container#nav-expanded{
-        @apply  absolute text-center shadow-xl flex-col sm:flex-row  md:items-stretch justify-around  w-[95vw] right-0 left-0 mx-auto top-16 mt-6 py-2 sm:px-2 z-30 bg-[--primary] dark:bg-[--primaryFixed] border dark:border-[--primary] border-[--outline]  ;
+        @apply  absolute text-center shadow-xl flex-col sm:flex-row  md:items-stretch justify-around  w-[95vw] right-0 left-0 mx-auto top-16 mt-6 py-2 sm:px-2 z-30 bg-(--primary) dark:bg-(--primaryFixed) border dark:border-(--primary) border-(--outline)  ;
       }
       .dd-container > li:hover,  .dd-container > li:focus-within {
-        @apply   bg-onSurface/[0.08] text-(--onSurfaceVariant)
+        @apply   bg-onSurface/[0.08] text-(--onPrimary) ;
       }
 
 

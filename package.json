@@ -13,6 +13,8 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.4.0",
+    "@fontsource/poppins": "^5.2.6",
+    "@fontsource/ubuntu": "^5.2.5",
     "@tailwindcss/vite": "^4.1.7",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",

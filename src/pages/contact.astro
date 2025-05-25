@@ -16,8 +16,8 @@ import ContactMessageNetlify from "~/components/react/ContactMessageNetlify"
 import background from "~/assets/woman.jpg"
 import siteInfo from "~/data/site-info";
 
-const title = siteInfo.pages[4].title
-const description = siteInfo.pages[4].description
+const title = siteInfo.pages[3].title
+const description = siteInfo.pages[3].description
 const address = siteInfo.business.tradingAddress
 
 --- 
@@ -26,7 +26,7 @@ const address = siteInfo.business.tradingAddress
 <BaseLayout {title} {description} >
     
 
-    <div class=" flex w-full relative  items-center justify-center z-20 flex-auto bg-(--primaryContainer) ">
+    <div class=" flex w-full relative  items-center justify-center z-20 flex-auto  ">
         <ContentSplit title="Get in Touch" subtitle="Connect" subtitleColor="text-[--onPrimary]" id="contact" addClasses="h-full " sectionbg="max-w-screen-lg flex w-full">
             <Fragment slot="heading">
                 <div class="flex flex-col gap-8">
@@ -45,7 +45,7 @@ const address = siteInfo.business.tradingAddress
                             <span>{address}</span>
                         </li>
                     </ul>
-                    <Feature title="Find us Online" bg="primaryFill text-primary-950 dark:text-primary-200">
+                    <Feature title="Find us Online" bg="">
                         <Socials
                             textSize="text-3xl"
                             addClass="flex min-w-fit w-full gap-2 px-2 text-[--primaryFixedDim]"
@@ -58,10 +58,10 @@ const address = siteInfo.business.tradingAddress
             </Fragment>
         
         
-            <div class="flex h-full max-w-lg w-full flex-none flex-col  items-center justify-center  p-4 shadow sm:p-6 lg:max-w-5xl lg:p-8 lg:py-14 ">
+            <div class="flex h-full max-w-lg w-full flex-none flex-col  items-center justify-center  p-4 shadow sm:p-6 lg:max-w-5xl lg:p-8 lg:py-14 bg-(--surface) ">
                 <p
                 aria-roledescription="subtitle"
-                class="font-subtitle text-base font-semibold uppercase text-[--onPrimaryContainer] text-left w-full mb-8">
+                class="font-subtitle text-base font-semibold uppercase text-(--primary) text-left w-full mb-8">
                     Send us a message
                 </p>
                 <ContactMessageNetlify client:load transition:persist />

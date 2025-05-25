@@ -1,8 +1,15 @@
 ---
 
 import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components";
 
 import BaseLayout from "~/layouts/BaseLayout.astro"
+import PageHeader from "~/components/sections/PageHeader.astro";
+import Button from "~/components/common/Button.astro";
+import ContentSplit from "~/components/sections/ContentSplit.astro";
+
+
+import placeholder from "~/assets/woman.jpg"
 
 import siteInfo from "~/data/site-info";
 const title = siteInfo.pages[1].title
@@ -12,12 +19,107 @@ const description = siteInfo.pages[1].title
 <BaseLayout {title} {description}>
 
     <!-- HEADER -->
+     <PageHeader title="Modern Approaches to Managing Mental Health" subtitle="Science-backed Solutions" background="bg-secondary text-white" subtitleColor="text-white">
+        <div class="flex flex-col gap-2 my-4">
+			<p class="w-full text-center md:text-left">We are revolutionising the way technology can be utilised to treat mental health issues by focusing on emotional regulation.</p>
+			<div class="mt-4 flex gap-4 sm:mt-6 justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href="#founder" type="color-primary"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Sign Up" href="/contact" type="outlined-filled"  />
+
+			</div>
+		</div>
+     </PageHeader>
 
     <!-- Sheena Message -->
+    <ContentSplit title="Developed by Science, Backed by Evidence" subtitle="About Us" id="founder">
+		<Fragment slot="heading">
+			<div class="flex flex-col gap-2 text-md">
+                <p class=" md:text-left text-center" >
+                    I know what it’s like to live with PTSD. I’ve been there and my message to anyone struggling is simple: achieving better mental health is possible.
+                </p>
+                <p class=" md:text-left text-center" >
+                    When you have access to the right tools and begin to understand your emotional responses to stress and trauma, change becomes not just possible but achievable. You don’t have to feel this way forever.
+                </p>
+                <p class=" md:text-left text-center" >
+                    I believe mental healthcare should be a right, not a privilege. That’s why I started Stress Point Health: to turn lived experience into action, and to bring science-led, digital mental health solutions to people who need them.
+                </p>
+                <p class="text-right italic text-primary font-bold text-lg py-8">- Sheena Pirbhai, Founder & CEO</p>
+            </div>
+
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="eager" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
 
     <!-- About out tech -->
+	<ContentSplit title="Born from innovation. Backed by neuroscience. Built for impact." subtitle="Our Tech Solutions" id="about-solutions" sectionbg="bg-primary text-white py-32" subtitleColor="text-white">
+		<Fragment slot="heading">
+            <div class="text-medium">
+                Stress Point Health was founded by a team of clinicians, technologists, and mental health innovators with one mission: to change how the world approaches emotional health. Our patented Neurofeedback software delivers precise, measurable support for emotional challenges—empowering individuals and organisations to improve mental wellbeing with speed, scale, and science.
+            </div>
 
+            <div class="flex flex-col md:flex-row gap-2 my-6">
+                <div class="grid grid-cols-[20px_minmax(0,1fr)] gap-4 items-center w-full">
+                    <Icon name="ph:cube" class="size-6 shrink-0 w-fit rounded-full bg-primary text-tertiary" aria-hidden="true"/>
+                    <h2 class="m-0">Sphere</h2>
+                    <p class="col-start-2 text-sm">Digitised Neurofeedback through a smartphone app targeting stress, anxiety, PTSD and burnout.</p>
+                </div>
+                <div class="grid grid-cols-[20px_minmax(0,1fr)] gap-4 items-center w-full">
+                    <Icon name="ph:cube" class="size-6 shrink-0 w-fit rounded-full bg-primary text-tertiary" aria-hidden="true"/>
+                    <h2 class="m-0">Data & Insights</h2>
+                    <p class="col-start-2 text-sm">Data driven insights for organisations looking for trackable and measurable progress.</p>
+                </div>
+            </div>
+
+			<div class="mt-4 flex gap-4 sm:mt-6 justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Discover" href="/solutions" type="filled"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href="/contact" type="no-fill" icon="ph:caret-right"  />
+
+			</div>
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="eager" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
+
+    <!-- Dr Bott Quote -->
+
+    <ContentSplit  id="bott" imageLeft>
+		<Fragment slot="heading">
+			<div class="flex flex-col gap-2 text-md mt-16">
+                <p class=" md:text-left text-center" >
+                    In order to drive mental health treatment into the future, we need to be open to leveraging evidence-based technology to cater to a growing number of patients.
+                </p>
+                <p class=" md:text-left text-center" >
+                    There is no doubt that technology tools enabling assessment and customised treatment to the individual needs of the patient will play a vital part in the future of mental health treatment.
+                </p>
+                <p class=" md:text-left text-center" >
+                    Real innovation lies in rethinking what we treat and how – for anxiety, PTSD and stress, we have already seen a shift from treating the thinking centre, to treating the emotional centre of the brain.
+                </p>
+                <p class="text-right italic text-primary font-bold text-lg py-8">- Dr. Michael Bott, Consultant Psychiatrist</p>
+            </div>
+
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="eager" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
     <!-- About Neurofeedback -->
+
+    
 
     <!-- Testimonial -->
 

@@ -1,6 +1,7 @@
 ---
 import '~/styles/global.css'
 
+
 import BaseHead, { type Props as HeadProps } from '~/components/page/BaseHead.astro';
 import SkipLink from "~/components/common/SkipLink.astro";
 import Header, { type Props as HeaderProps } from "~/components/page/Header.astro";
@@ -21,17 +22,17 @@ const { class: classList, header = "opaque", type = "website", ...head } = Astro
         <BaseHead {...head} />
 	</head>
 
-	<body class="flex flex-col w-full items-center bg-neutral">
+	<body class="flex flex-col w-full items-center bg-neutral ">
 		<SkipLink />
         
         <Header {header} fontColors=" hover:text-(--onPrimary) hover:bg-(--surfaceTint)  rounded-md "/>
 
-        <main class:list={["relative z-0  flex-auto max-w-7xl w-[80svw]  overflow-x-hidden flex  flex-col items-center justify-start  text-(--onSurface) my-24" ]}>
+        <main class:list={["relative z-0  flex-auto max-w-7xl w-[80svw]  overflow-x-hidden flex  flex-col items-center justify-start  text-(--onSurface) my-12" ]}>
             <slot />
         </main>
 
         
-        <Footer9 />
+        <Footer9 boxClasses="rounded-lg bg-(--inverseSurface) text-white" footer/>
         
         <!-- <Cookies /> -->
 	</body>

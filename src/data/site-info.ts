@@ -132,7 +132,7 @@ const siteInfo: SiteInfo = {
       nav: true,
     },
     {
-      key: "About",
+      key: "About Us",
       href: "/about/",
       title: "About title",
       description: "About description",
@@ -149,9 +149,9 @@ const siteInfo: SiteInfo = {
           href: "/solutions/",
         },
         {
-          key: "SPHERE App",
+          key: "Sphere App",
           href: "/solutions/sphere/",
-          title: "sphere title",
+          title: "Sphere",
           description: "sphere description",
         },
         // {
@@ -161,13 +161,13 @@ const siteInfo: SiteInfo = {
       ],
       nav: true,
     },
-    {
-      key: "Resources",
-      href: "/resources/",
-      title: "resources title",
-      description: "resources description",
-      nav: true,
-    },
+    // {
+    //   key: "Resources",
+    //   href: "/resources/",
+    //   title: "resources title",
+    //   description: "resources description",
+    //   nav: true,
+    // },
     {
       key: "Contact",
       href: "/contact/",

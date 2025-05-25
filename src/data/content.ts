@@ -26,20 +26,20 @@ export type Content = {
 const content: Content = {
   partnerLogos: [
     {
-      name: "test",
-      src: "~/assets/dark-logo.svg",
+      name: "tech republic",
+      src: "src/assets/partner-logos/techrepublic.svg",
     },
     {
       name: "test2",
-      src: "~/assets/light-logo.svg",
+      src: "src/assets/partner-logos/techrepublic.svg",
     },
     {
-      name: "test",
-      src: "~/assets/dark-logo.svg",
+      name: "test3",
+      src: "src/assets/partner-logos/techrepublic.svg",
     },
     {
-      name: "test2",
-      src: "~/assets/light-logo.svg",
+      name: "test4",
+      src: "src/assets/partner-logos/techrepublic.svg",
     },
   ],
   apiFeatures: [

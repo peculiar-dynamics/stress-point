@@ -29,19 +29,10 @@ import placeholder from "~/assets/woman.jpg"
 	 <VideoHeader  link="#about" title="Master the Power of Emotion." tagline="A breakthrough in mental health, powered by neuroscience and sound. ">
 		<div class="flex flex-col gap-2 my-4">
 			<p>Discover the revolutionary software that harnesses patented Neurofeedback technology to help you regulate our emotions effectively. Experience a new level of emotional wellbeing with our unique sound frequencies.</p>
-			<div class="mt-4 flex gap-4 sm:mt-6">
-				<a
-				  class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-				  href="#about"
-				>
-				  Get Started
-				</a>
-				<a
-				  class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-				  href="#"
-				>
-				  Learn More
-				</a>
+			<div class="mt-4 flex gap-4 sm:mt-6 justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Get Started" href="#about" type="filled"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Get in Touch" href="/contact" type="outlined-filled"  />
+
 			</div>
 		</div>
 	</VideoHeader>
@@ -53,23 +44,13 @@ import placeholder from "~/assets/woman.jpg"
 	<ContentSplit title="Developed by Science, Backed by Evidence" subtitle="About Us" id="about">
 		<Fragment slot="heading">
 			<p class=" md:text-left text-center" >
-				We are transforming the use of technology in treating mental health by prioritising emotional regulation. Our innovative software employs patented NBeurofeedback technology to help individuals manage thier emotions in just 20 minutes using tailored sound frequencies. 
+				We are transforming the use of technology in treating mental health by prioritising emotional regulation. Our innovative software employs patented Neurofeedback technology to help individuals manage thier emotions in just 20 minutes using tailored sound frequencies. 
 			</p>
 
-			<div class="mt-4 flex gap-4 sm:mt-6">
-				<a
-				  class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-				  href="#"
-				>
-				  Get Started
-				</a>
-		
-				<a
-				  class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-				  href="#"
-				>
-				  Learn More
-				</a>
+			<div class="mt-4 flex gap-4 sm:mt-6  justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Discover" href="/about" type="color-primary"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href="/contact" type="no-fill" icon="ph:caret-right"  />
+
 			</div>
 
 		</Fragment>
@@ -82,47 +63,37 @@ import placeholder from "~/assets/woman.jpg"
 	</ContentSplit>
 
 	<!-- FEATURE - Link to SOLUTIONS -->
-	<ContentSplit title="Stress Point Health's patented API brings digitised Neurofeedback to the market for the first time." subtitle="The Stress Point Health API" id="solutions">
+	<ContentSplit title="Stress Point Health's patented API brings digitised Neurofeedback to the market for the first time." subtitle="The Stress Point Health API" id="solutions" sectionbg="bg-primary text-white py-32" subtitleColor="text-white">
 		<Fragment slot="heading">
 
-			<div class="mt-4 flex gap-4 sm:mt-6">
-				<a
-				  class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-				  href="#"
-				>
-				  Get Started
-				</a>
-		
-				<a
-				  class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-				  href="#"
-				>
-				  Learn More
-				</a>
+			<div class="mt-4 flex gap-4 sm:mt-6 justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Discover" href="/solutions" type="filled"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href="/contact" type="no-fill" icon="ph:caret-right"  />
+
 			</div>
 
 		</Fragment>
 		<div class="flex flex-col gap-4 ">
 
 			<ol
-				class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+				class="relative space-y-8 before:absolute before:ml-1 before:h-full before:w-0.5 before:rounded-full before:bg-secondary"
 			>
 				{
 					apiFeatures.map((feature) => (
-					<li class="relative -ms-1.5 flex items-start gap-4 ">
+					<li class="relative -ms-1.5 flex items-start gap-4 text-white ">
 				
-						<Icon name={feature.icon ? feature.icon : "ph:cube"} class="size-4 shrink-0 rounded-full bg-(--primary)" aria-hidden="true" />
+						<Icon name={feature.icon ? feature.icon : "ph:cube"} class="size-6 shrink-0 rounded-full bg-primary text-tertiary" aria-hidden="true" />
 					
 						<div class="-mt-2">
 							{
 								feature.subtitle && (
-									<p class="text-xs/none font-medium text-gray-700">{feature.subtitle}</p>
+									<p class="text-xs/none font-medium ">{feature.subtitle}</p>
 								)
 							}
 					
-							<h3 class="text-lg font-bold text-gray-900">{feature.title}</h3>
+							<h3 class="text-lg font-bold ">{feature.title}</h3>
 					
-							<p class="mt-0.5 text-sm text-gray-700">
+							<p class="mt-0.5 text-sm font-light ">
 							{feature.content}
 							</p>
 						</div>
@@ -138,23 +109,13 @@ import placeholder from "~/assets/woman.jpg"
 	<ContentSplit title="The modern approach to regulating your emotions" subtitle="Sphere" id="sphere">
 		<Fragment slot="heading">
 			<p class=" md:text-left text-center" >
-				Discover the revolutionary Sphere app that harnesses cutting-edge Neurofeedback technology. An app designed to treat, stress, anxiety and PTSD by helping you deal with your emotional reaction to triggers.
+				Discover the revolutionary Sphere app that harnesses cutting-edge Neurofeedback technology. An app designed to treat stress, anxiety and PTSD by helping you deal with your emotional reaction to triggers.
 			</p>
 
-			<div class="mt-4 flex gap-4 sm:mt-6">
-				<a
-				  class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-				  href="/solutions/sphere"
-				>
-				  Get Started
-				</a>
-		
-				<a
-				  class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-				  href="#"
-				>
-				  Learn More
-				</a>
+			<div class="mt-4 flex gap-4 sm:mt-6 justify-center items-center md:justify-start">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Discover" href="/solutions/sphere" type="color-primary"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href="/contact" type="no-fill" icon="ph:caret-right"  />
+
 			</div>
 
 		</Fragment>
@@ -168,20 +129,23 @@ import placeholder from "~/assets/woman.jpg"
 
 	<!-- RESOURCES LIST -->
 
-	<ContentGallery subtitle="Resources"  items={content.blogs} gallery="cards" sectionbg="bg-[--primaryContainer]" cardCols="lg:grid-cols-3">
+	<ContentGallery subtitle="Insights" title="Explore our Latest Resources" subtext="Stay updated with our recent articles and insights." items={content.blogs} gallery="cards" sectionbg="" cardCols="lg:grid-cols-3">
 		<Button
 		href="/resources"
 		text="Read More Content"
 		type="filled"
-		buttonColor=""
+		buttonColor="color-primary"
 		addClasses="w-fit"
 		slot="buttons"
 
 		/>
+
+			<p slot="subtext">Stay updates with our recent articles and insights.</p>
+
 	</ContentGallery>
 
 	<!-- CTA -->
-	<CTA divbg="bg-[--primaryContainer] text-[--onPrimaryContainer]" sectionbg="my-16" />
+	<CTA divbg="bg-(--tertiaryContainer) text-(--onTertiaryContainer) rounded-lg py-32 min-h-32" sectionbg="my-16 " title="Transform Your Emotions Today"  />
 	<!-- FAQ -->
 
 

@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 @import "./colors.css";
-/* @import "./fonts.css";
-@import "./forms.css"; */
+
+@import "@fontsource/poppins";
+@import "@fontsource/ubuntu";
+
+@import "./forms.css";
 
 /* @import "tailwindcss/preflight"; */
 
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
 @theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Ubuntu", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
   /* CUSTOM FONTS */
-  --font-subtitle: "FiraSansCondensed", "sans-serif";
+  --font-subtitle: "Poppins", "sans-serif";
+  --font-title: "Poppins", "sans-serif";
 
   /* CUSTOMISE */
 
@@ -700,10 +706,10 @@
     @apply bg-(--secondaryContainer) text-(--onSecondaryContainer) hover:bg-(---primaryFixedDim);
   }
   .button.outlined {
-    @apply text-(--primary) border  border-(--outline) rounded-md hover:bg-primary-400/[0.08];
+    @apply text-(--primary) border  border-(--outline)  hover:bg-primary-400/[0.08];
   }
   .button.outlined-filled {
-    @apply bg-(--surface) text-(--primary) dark:bg-transparent dark:text-(--secondary) border  border-(--outline) rounded-md hover:bg-primary-400/[0.08];
+    @apply bg-(--surfaceDim) text-(--onSurface) dark:bg-transparent dark:text-(--secondary) border  border-(--outline)  hover:bg-primary-400/[0.08];
   }
 
   .elevated.disabled,
@@ -713,11 +719,14 @@
   }
 
   .button.color-primary {
-    @apply border-2 border-(--outline) hover:bg-primary-400 hover:text-white text-neutral-100 bg-primary-300;
+    @apply hover:bg-primary-700 hover:text-white text-neutral-100 bg-primary;
   }
 
   .button.color-secondary {
     @apply border-2 border-(--secondary-background) bg-transparent font-semibold capitalize text-(--on-surface) hover:border-transparent hover:bg-(--secondary-container) hover:text-(--on-secondary-container);
+  }
+  .button.no-fill {
+    @apply hover:bg-secondary hover:text-white;
   }
 
   .button.size-tiny {

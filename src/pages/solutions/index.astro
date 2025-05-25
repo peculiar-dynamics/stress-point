@@ -3,23 +3,137 @@
 import { Image } from "astro:assets"
 
 import BaseLayout from "~/layouts/BaseLayout.astro"
+import PageHeader from "~/components/sections/PageHeader.astro";
+import Button from "~/components/common/Button.astro";
+import ContentSplit from "~/components/sections/ContentSplit.astro";
+import SectionHeading from "~/components/common/SectionHeading.astro";
+import CTA from "~/components/sections/CTA.astro";
 
 import siteInfo from "~/data/site-info";
 const title = siteInfo.pages[2].title
-const description = siteInfo.pages[2].title
+const description = siteInfo.pages[2].description
+
+import placeholder from "~/assets/woman.jpg"
 ---
 
 <BaseLayout {title} {description}>
 
     <!-- PRODUCTS AND SERVICES LIST -->
+    <PageHeader title="Clinically validated, Evidence backed" subtitle="Neuroscience-Powered Solutions for Emotional Health" background="" subtitleColor="" center>
+        <div class="flex flex-col gap-2 my-4 w-full text-center">
+			<p>Our products are built at the intersection of neuroscience, technology, and real-world impact. From enterprise-ready platforms to individual support tools, each solution leverages patented Neurofeedback technology and evidence-based design to support emotional wellbeing, reduce stress, and drive behavioural change.</p>
+            <p class="mt-4">Explore how Stress Point Health can support your organisation, your clients, or your clinical practice.</p>
+		</div>
 
-    <!-- SOLUTION FEATURE SECTION x3 -->
+        <Fragment slot="content">
+            <!-- SOLUTION FEATURE SECTION x3 -->
+            <ContentSplit title="A smarter way to support emotional health." subtitleColor="text-white" subtitle="Sphere" id="sphere" headingWidth="w-full  bg-(--primaryContainer) p-4 lg:p-6 text-white">
+                <Fragment slot="heading">
+                    <p class=" md:text-left text-center text-sm" >
+                        Our proprietary Neurofeedback algorithm brings software as a medical device emotional regulation to your smartphone. Designed for real-world use, SPHERE empowers individuals to regulate emotions in just 20 minutes - anytime, anywhere.
+                    </p>
+
+                    <div class="mt-4 flex gap-4 sm:mt-6 w-full justify-center items-center md:justify-start">
+                        <Button addClasses=" inline-flex  size-tiny sm:size-small" text="Meet SPHERE" href="/solutions/sphere" type="color-secondary"  />
+                        <Button addClasses=" inline-flex  size-tiny sm:size-small" text="Contact Us" href="/contact" type="no-fill" icon="ph:caret-right"  />
+
+                    </div>
+                    
+
+                </Fragment>
+
+                
+                <div class="flex flex-col gap-4 flex-auto w-full">
+                    <div class=" flex-auto bg-(--primary) flex flex-col justify-center items-center md:justify-start  w-full p-4 lg:p-6 lg:py-16 text-white">
+                        <SectionHeading title="Data that drives better mental health decisions" subtitle="Insights" subtitleColor="text-white">
+                            <p class="text-sm">We provide actionable, AI-powered insights for healthcare providers and tech platforms, helping you support emotional health and drive impact at scale.</p>
+
+                        </SectionHeading>
+                        <Button addClasses=" inline-flex  size-tiny sm:size-small" text="Contact Us" href="/contact" type="no-fill" icon="ph:caret-right"  />
+                    </div>
+                    <div class=" flex-auto bg-(--primaryFixedDim)  w-full p-4 lg:p-6 lg:py-16 text-(--onPrimaryFixed) flex flex-col justify-center items-center md:justify-start ">
+                        <SectionHeading title="Tailored mental health programmes for your workforce." subtitle="Employee Support" subtitleColor="text-(--onPrimaryFixed)">
+                            <p class="text-sm">Start with a full emotional wellbeing audit of your organisation. We use real-time data to design custom interventions that reduce stress and burnout, retain your workforce, and improve employee productivity.</p>
+                        </SectionHeading>
+                        <Button addClasses=" inline-flex  size-tiny sm:size-small" text="Contact Us" href="/contact" type="no-fill" icon="ph:caret-right"  />
+                    </div>
+                </div>
+
+            </ContentSplit>
+        </Fragment>
+     </PageHeader>
+    
+
 
     <!-- CUSTOMER FEATURE -->
+
+    <ContentSplit title="Making advanced brain health accessible through sound." subtitle="The Science Behind our Technology" >
+		<Fragment slot="heading">
+			<div class="flex flex-col gap-4">
+                <p class=" md:text-left text-center text-sm" >
+                    Neurofeedback is a science-backed method that helps people shift unhealthy brain activity patterns, often caused by trauma, stress, or anxiety. Traditionally used in specialist clinics, Neurofeedback can be expensive and hard to access. Our products change that.
+                </p>
+                            <p class=" md:text-left text-center text-sm" >
+                                Our patented approach uses neuroacoustic sound therapy, specific sound frequencies designed to interact with brainwaves and guide the brain into healthier patterns. Delivered via a smartphone, SPHERE brings this powerful technique into everyday life, whether used independently or alongside clinical support.
+                </p>
+                            <p class=" md:text-left text-center text-sm" >
+                                Over time, this helps the brain respond better to emotional triggers, reduces reliance on medication, and promotes lasting mental resilience.
+                </p>
+            </div>
+
+
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="lazy" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
+    <ContentSplit title="When the brain becomes disregulated" imageLeft >
+		<Fragment slot="heading">
+			<div class="flex flex-col gap-4">
+                <p class=" md:text-left text-center text-sm" >
+                    Your brain is constantly working behind the scenes to keep you in balance — adjusting heart rate, breathing, stress hormones, and more. But trauma, chronic stress, and anxiety can disrupt this balance, making it harder to cope, focus, or feel calm.
+                </p>
+            </div>
+
+
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="lazy" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
+    <ContentSplit title="How Digitised Neurofeedback Helps Reset the Brain"  >
+		<Fragment slot="heading">
+			<div class="flex flex-col gap-4">
+                <p class=" md:text-left text-center text-sm" >
+                    Your brain operates using electrical signals called brainwaves. Different wave types - like alpha, beta, or theta - correspond to different mental states, from deep relaxation to alert focus.
+                </p>
+                <p class=" md:text-left text-center text-sm" >
+                    Too much high-frequency activity (like beta waves) is linked to anxiety. Too little calming activity (like alpha waves) can lead to overwhelm. SPHERE’s sound frequencies help encourage more helpful brainwave patterns, supporting calm, focus, and emotional clarity.</p>
+            </div>
+
+
+
+		</Fragment>
+		<div class="flex flex-col gap-4 ">
+
+			<Image src={placeholder} alt=""   decoding="async"
+			loading="lazy" class="relative rounded-lg  object-cover object-center animate-fadeIn" />
+		</div>
+
+	</ContentSplit>
 
     <!-- Testimonial -->
 
     <!-- CTA -->
+    <CTA divbg="bg-(--tertiaryContainer) text-(--onTertiaryContainer) rounded-lg py-32 min-h-32" sectionbg="my-16 " title="Learn More About Neurofeedback" subtitle="Find Out More" subtitleColor="text-(--onTertiaryContainer)" learnLink="/about"   />
 
 	
 </BaseLayout>

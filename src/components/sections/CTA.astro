@@ -1,8 +1,9 @@
 ---
 import SectionHeading from "~/components/common/SectionHeading.astro";
 import InlineEmailNetlify from "~/components/react/InlineEmailNetlify";
+import Button from "~/components/common/Button.astro";
 
-const {addClasses, subtitle = "Keep in Touch", title="Receive News and Updates from us", sectionbg, divbg, signup} = Astro.props
+const {addClasses, subtitle, title, learnLink="/contact", sectionbg, divbg, signup} = Astro.props
 ---
 
 <section class:list={["w-full flex items-center justify-center", sectionbg]}>
@@ -13,21 +14,11 @@ const {addClasses, subtitle = "Keep in Touch", title="Receive News and Updates f
             signup ?
                 <InlineEmailNetlify client:load transition:persist />
             : 
-            <div class="mt-4 flex gap-4 sm:mt-6">
-                <a
-                class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-                href="#"
-                >
-                Get Started
-                </a>
-        
-                <a
-                class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-                href="#"
-                >
-                Learn More
-                </a>
-            </div>
+			<div class="flex gap-4 justify-center items-center md:justify-start ">
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Contact Us" href="/contact" type="color-primary"  />
+				<Button addClasses="order-last sm:order-first inline-flex  size-tiny sm:size-small" text="Learn More" href={learnLink} type="outlined"   />
+
+			</div>
             
         }
         
