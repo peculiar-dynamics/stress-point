@@ -12,7 +12,7 @@ import darkHeroImage from "~/assets/dark-icon.png"
 import heroImage from "~/assets/light-icon.png"
 import type { ActionError } from "astro:actions";
 ---
-<section class:list={[" animate-fadeIn w-full relative z-10 flex lg:gap-8 lg:justify-center justify-start items-center  px-4 sm:px-8 text-balance pb-4 sm:pb-8  flex-auto rounded-lg m-8  overflow-hidden bg-(--scrim) text-white", {"min-h-[85svh] lg:min-h-[60svh] max-h-full": scroll}, background ==="gradient" ? "gradient" : background]}>
+<section class:list={[" absolute top-0 animate-fade-in w-full  z-10 flex lg:gap-8 lg:justify-center justify-start items-center  px-4 sm:px-8 text-balance pb-4 sm:pb-8  flex-auto   overflow-hidden bg-primary-50 text-white", {"min-h-[85svh]  max-h-full": scroll}, background ==="gradient" ? "gradient" : background]}>
     
 
 
@@ -36,10 +36,11 @@ import type { ActionError } from "astro:actions";
 
         
 
-        <video muted autoplay loop transition:persist class="flex-auto absolute inset-0 min-w-full min-h-full z-0 object-cover object-center animate-fadeIn opacity-50">
+        <video preload muted autoplay loop transition:persist class="flex-auto absolute inset-0 min-w-full min-h-full z-0 object-cover object-center  opacity-50">
             <source
                 src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4"
                 type="video/mp4"
+
             />
         </video>
 

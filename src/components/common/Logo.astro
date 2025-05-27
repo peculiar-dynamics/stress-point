@@ -3,23 +3,23 @@ import { Image } from "astro:assets"
 const { header, footer, addClasses } = Astro.props;
 
 import darkIcon from "~/assets/black-icon.svg"
-import lightIcon from "~/assets/white-icon.svg"
+import lightIcon from "~/assets/dark-icon.svg"
 ---
 <!-- check image tage performance if better -->
 
 <a href="/"       aria-label="navigate to home"
 class:list={[
-  `  flex shrink items-center justify-start rounded-md max-w-full  object-contain ${addClasses}`,
-  {"order-1 relative min-[250px]:h-8 h-0 sm:h-12 lg:h-16 ": header},
+  `   items-center justify-start rounded-md max-w-full  object-contain ${addClasses}`,
+  {"order-1 relative min-[250px]:h-12 h-0 sm:h-12 lg:h-16    overflow-hidden": header},
   {"flex items-center gap-2 !no-underline h-12": footer}
   ]}>
 
   <!-- light screen logo -->
-  <Image src={lightIcon} alt="" class="dark:hidden flex object-contain max-h-full w-max min-h-16 md:min-h-fit" />
+  <Image src={lightIcon} alt="" class="dark:hidden object-scale-down  h-full w-fit max-h-full" />
  
 
   
   <!-- Logo for dark screen -->
-  <Image src={darkIcon} alt="" class="hidden dark:flex object-contain max-h-full w-max min-h-16 md:min-h-fit" />
+  <Image src={darkIcon} alt="" class="hidden dark:flex object-scale-down  h-full w-fit max-h-full " />
 
   </a>

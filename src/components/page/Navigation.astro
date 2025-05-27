@@ -76,7 +76,7 @@ const pages = siteInfo.pages.filter(page => page.nav)
     </ul>
 
     <!-- Hamburger -->
-    <ResponsiveToggle colors="text-white hover:text-(--onSurface) hover:bg-(--surfaceContainer)" />
+    <ResponsiveToggle colors=` hover:text-(--onSurface) hover:bg-(--surfaceContainer) ${fontColors}` />
 </nav>
 
 <script>
@@ -253,10 +253,10 @@ const pages = siteInfo.pages.filter(page => page.nav)
 
     .is-active{
       text-decoration: underline;
-      text-decoration-color: var(--tertiary);
+      text-decoration-color: var(--color-tertiary);
       text-decoration-style: solid;
       text-decoration-thickness: 4px;
-      font-weight: 600;
+      /* font-weight: 600; */
       font-size: 1.125rem;
     }
     a:hover, a:focus, .nav-button:hover, .nav-button:focus {

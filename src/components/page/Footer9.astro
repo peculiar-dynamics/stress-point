@@ -21,7 +21,7 @@ const {pages = siteInfo.pages, nested=true, footerClasses, boxClasses } = Astro.
 
 <footer class:list={["flex flex-col gap-6 items-center text-sm text-center md:text-left my-2", footerClasses]}>
     <!-- Box content -->
-    <div class:list={["flex flex-col md:flex-row gap-6 md:gap-8  max-w-5xl w-[80svw]  px-4 py-8", boxClasses]}>
+    <div class:list={["flex flex-col md:flex-row gap-6 md:gap-8    px-4 py-8", boxClasses]}>
         <!-- Box left -->
         <div class="flex flex-col gap-4 flex-auto  justify-center w-full">
 
@@ -41,7 +41,7 @@ const {pages = siteInfo.pages, nested=true, footerClasses, boxClasses } = Astro.
             </div>
         
             
-            <div class="w-full  ">
+            <div class="w-full my-6 ">
                 <InlineEmailNetlify client:load transition:persist />
             </div>
             
@@ -107,7 +107,7 @@ const {pages = siteInfo.pages, nested=true, footerClasses, boxClasses } = Astro.
         </div>
     </div>
     <!-- Below box -->
-    <div class="flex flex-col gap-1 max-w-5xl w-[80svw] text-xs">
+    <div class="flex flex-col gap-1 w-full text-xs">
             <!-- legals -->
             <slot name="legals" />
             <div

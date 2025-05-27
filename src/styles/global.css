@@ -479,7 +479,7 @@
   --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-bounce: bounce 1s infinite;
 
-  --animate-fade-in: fade-in 0.5s ease-in;
+  --animate-fade-in: fade-in 5s ease-in;
 
   @keyframes spin {
     to {
@@ -628,7 +628,6 @@
   /* scrollbar */
   * {
     scrollbar-width: thin;
-    /* scrollbar-color: var(--secondary-50) var(--secondary-200); */
   }
 
   /* Chrome, Edge, and Safari */
